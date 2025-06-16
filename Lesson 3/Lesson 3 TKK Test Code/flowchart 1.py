@@ -1,20 +1,23 @@
-#declaring colors
-first_color = 'red' or 'yellow' or 'blue'
-second_color = 'green' or 'purple' or 'orange'
+# prompt the user
+first_color  = input('Enter the first color: ')
+second_color = input('Enter the second color: ')
 
-#prompt user for input
-first_color = print(str(input('Enter the first color:')))
-second_color = print(str(input('Enter the second color:')))
+# allowed input
+valid = ('red', 'orange', 'yellow', 'green', 'blue', 'purple')
 
-#if user selected the wrong color:
-if first_color != ('red', 'green', 'yellow'):
-    print('You did not enter one of red, orange, yellow, green, blue, or purple1')
+# validation
+if first_color not in valid or second_color not in valid:
+    print('You did not enter one of red, orange, yellow, green, blue or purple')
 
-if second_color != ('purple', 'blue', 'orange'):
-    print('You did not enter one of red, orange, yellow, green, blue, or purple2')
-
-#if user selected the correct color:
-elif ('red' or 'yellow' or 'blue' and 'green' or 'purple' or 'orange'):
+# complementary check
+elif (first_color == 'red' and second_color == 'green') or \
+    (first_color == 'green' and second_color == 'red') or \
+    (first_color == 'yellow' and second_color == 'purple') or \
+    (first_color == 'purple' and second_color == 'yellow') or \
+    (first_color == 'blue' and second_color == 'orange') or \
+    (first_color == 'orange' and second_color == 'blue'):
     print('The two colors are complementary')
 
-#this does not work as a result, I'm trying to figure out a more effecient way of doing this. I paused.
+# everything else
+else:
+    print('The two colors are not complementary')

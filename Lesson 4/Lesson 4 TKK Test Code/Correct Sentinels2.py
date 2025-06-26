@@ -5,13 +5,15 @@ right_value = 27
 # creating simple counter for guess count
 guess_value = 0
 
-while True:
+again = 'y'
+while again == 'y':
     user_input = int(input('Enter a guess: '))
     guess_value += 1
 
     if user_input < right_value:
         print('Your guess is too low.')
-    elif user_input < right_value:
+    elif user_input > right_value:
         print('Your guess is too high.')
     else:
         print(f'Correct! it took you {guess_value} guesses.')
+    again = input('Again? y or n?')
